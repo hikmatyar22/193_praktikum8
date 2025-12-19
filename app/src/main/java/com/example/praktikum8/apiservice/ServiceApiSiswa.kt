@@ -1,4 +1,4 @@
-package com.example.praktikum8.serviceapi
+package com.example.praktikum8.apiservice
 
 import com.example.praktikum8.modeldata.DataSiswa
 import retrofit2.http.Body
