@@ -4,11 +4,11 @@ package com.example.praktikum8.modeldata
 import kotlinx.serialization.Serializable
 import kotlin.Int
 @Serializable
-data class DataSiswa (
+data class DataSiswa(
     val id : Int,
-    val nama: String,
-    val alamat: String,
-    val telpon: String
+    val nama : String,
+    val alamat : String,
+    val telpon : String
 )
 
 data class UIStateSiswa(
@@ -16,13 +16,12 @@ data class UIStateSiswa(
     val isEntryValid: Boolean = false
 )
 
-data class DetailSiswa (
-    val id : Int = 0,
+data class DetailSiswa(
+    val id: Int = 0,
     val nama: String = "",
     val alamat: String = "",
-    val telpon: String = ""
+    val telpon: String = "",
 )
-
 
 fun DetailSiswa.toDataSiswa(): DataSiswa = DataSiswa(
     id = id,
@@ -31,11 +30,10 @@ fun DetailSiswa.toDataSiswa(): DataSiswa = DataSiswa(
     telpon = telpon
 )
 
-fun DataSiswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSiswa =
-    UIStateSiswa(
-        detailSiswa = this.toDetailSiswa(),
-        isEntryValid = isEntryValid
-    )
+fun DataSiswa.toUiStateSiswa(isEntryValid: Boolean = false): UIStateSiswa = UIStateSiswa(
+    detailSiswa = this.toDetailSiswa(),
+    isEntryValid = isEntryValid
+)
 
 fun DataSiswa.toDetailSiswa(): DetailSiswa = DetailSiswa(
     id = id,
