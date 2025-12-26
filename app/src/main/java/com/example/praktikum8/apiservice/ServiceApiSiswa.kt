@@ -2,8 +2,11 @@ package com.example.praktikum8.apiservice
 
 import com.example.praktikum8.modeldata.DataSiswa
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Query
 
 interface ServiceApiSiswa {
     @GET("bacaTeman.php")
@@ -12,4 +15,9 @@ interface ServiceApiSiswa {
     @POST("insertTM.php")
     suspend fun postSiswa(@Body dataSiswa: DataSiswa):retrofit2.Response<Void>
 
+    @GET("baca1teman.php/{id}")
+    suspend fun getSatuSiswa (@Query("id") id: Int): DataSiswa
+
+
 }
+
